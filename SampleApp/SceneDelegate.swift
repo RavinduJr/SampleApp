@@ -13,10 +13,77 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: windowScene)
+        
+        // Daily needs app
+        
+        let categoryViewController = UINavigationController(rootViewController: CategoryViewController())
+        window?.rootViewController = categoryViewController
+        
+        // life cycle app
+        
+//        let lifeCycleVC = UINavigationController(rootViewController:LifeCycleViewController())
+//        window?.rootViewController = lifeCycleVC
+        
+        //auto constraint app
+        
+//        window?.rootViewController = StackAutoViewController()
+        
+        // Normal Application
+        
+//        window?.rootViewController = NormalViewController()
+        
+        //To Text Field Test App
+        
+//        window?.rootViewController = ExpandTextFieldViewController()
+        
+        //Collection View APp
+        
+//        window?.rootViewController = CollectionViewController()
+        
+        //Text testing app
+        
+//        window?.rootViewController = ToViewController()
+        
+        //Date picker app
+        
+//        window?.rootViewController = DatePickerViewController()
+        
+        // Menu App
+        
+//        let menuVC = UINavigationController(rootViewController:MenuViewController())
+//        window?.rootViewController = menuVC
+        
+        // Email App
+        
+//        let emailVC = UINavigationController(rootViewController:EmailViewController())
+//        window?.rootViewController = emailVC
+        
+        // Nested Tab Application
+//        let primaryVC = NTPrimaryViewController()
+//        let secodaryVC = NTSecondaryViewController()
+//        
+//        let primaryNavVC = UINavigationController(rootViewController:primaryVC)
+//        let secondaryNavVC = UINavigationController(rootViewController:secodaryVC)
+//        
+//        let tabBarItemPrimary = UITabBarItem(title: "Primary", image: UIImage(systemName: "house"),
+//                                             selectedImage: UIImage(systemName: "house.fill"))
+//        let tabBarItemSecondary = UITabBarItem(title: "Secondary", image: UIImage(systemName: "sink"),
+//                                               selectedImage: UIImage(systemName: "sink.fill"))
+//                                               
+//        primaryNavVC.tabBarItem = tabBarItemPrimary
+//        secondaryNavVC.tabBarItem = tabBarItemSecondary
+//                                
+//        let tabController = UITabBarController()
+//        tabController.viewControllers = [primaryNavVC, secondaryNavVC]
+//        window?.rootViewController = tabController
+        
+        
+        // UIStackView Application
+//        let ctVC = ContextPrimaryVC()
+//        window?.rootViewController = UINavigationController(rootViewController: ctVC)
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
