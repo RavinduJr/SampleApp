@@ -10,21 +10,20 @@ import UIKit
 class CategoryCollectionViewCell: UICollectionViewCell {
     static let identifier = "CategoryCollectionViewCell"
     
-    var categoryImage = UIImageView()
+    var categoryImage = UIImageView(image: UIImage(systemName: "sink"))
     var categoryName = UILabel()
     
-    required init() {
+    override init(frame: CGRect) {
         super.init(frame: .zero)
-        setupUI()
     }
     
     required init?(coder: NSCoder) {
+        print("came here")
         fatalError()
     }
     
     func configUI(category: Category?) {
         categoryName.text = category?.categoryName
-        categoryImage.image = category?.categoryImage
     }
     
     func setupUI() {

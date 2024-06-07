@@ -10,5 +10,6 @@ import Foundation
 struct Strings {
     struct Category {
         static let addBar = "Send"
+        static let categoryTitle = "Category"
     }
 }

@@ -11,5 +11,4 @@ import UIKit
 struct Category {
     var categoryId: String
     var categoryName: String
-    var categoryImage: UIImage?
 }

@@ -9,9 +9,20 @@ import UIKit
 
 class CategoryViewController: UIViewController {
     
-    var categoryCollection = UICollectionView()
+    var categoryCollection: UICollectionView!
     var safeArea: UILayoutGuide!
-    var categories: [Category] = []
+    var categories: [Category] = [
+        Category(categoryId: "1", categoryName: "Ravindu"),
+        Category(categoryId: "1", categoryName: "Ravindu"),
+        Category(categoryId: "1", categoryName: "Ravindu"),
+        Category(categoryId: "1", categoryName: "Ravindu"),
+        Category(categoryId: "1", categoryName: "Ravindu"),
+        Category(categoryId: "1", categoryName: "Ravindu"),
+        Category(categoryId: "1", categoryName: "Ravindu"),
+        Category(categoryId: "1", categoryName: "Ravindu"),
+        Category(categoryId: "1", categoryName: "Ravindu"),
+        Category(categoryId: "1", categoryName: "Ravindu")
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,19 +40,20 @@ class CategoryViewController: UIViewController {
         safeArea = view.safeAreaLayoutGuide
         view.backgroundColor = UIColor(named: "BackgroundColor")
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: .add, style: .plain, target: self, 
+        self.navigationItem.title = Strings.Category.categoryTitle
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: .add, style: .plain, target: self,
                                                                  action: #selector(addCategoryPopUpHandler))
         
-        view.addSubview(categoryCollection)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         categoryCollection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         categoryCollection.delegate = self
         categoryCollection.dataSource = self
+        categoryCollection.backgroundColor = .red
         categoryCollection.translatesAutoresizingMaskIntoConstraints = false
         categoryCollection.register(CategoryCollectionViewCell.self, 
                                     forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
-        
+        view.addSubview(categoryCollection)
         
         NSLayoutConstraint.activate([
             //  Collection constraints set
@@ -68,7 +80,7 @@ extension CategoryViewController: UICollectionViewDataSource {
         guard let categoryCell = collectionView.dequeueReusableCell(
             withReuseIdentifier: CategoryCollectionViewCell.identifier,
             for: indexPath
-        ) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
+        ) as? CategoryCollectionViewCell else {fatalError("The dequeued cell is not an instance of ZVaultContactCell.")}
         categoryCell.configUI(category: categories[indexPath.row])
         return categoryCell
     }
