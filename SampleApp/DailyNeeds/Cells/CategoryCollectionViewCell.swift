@@ -15,6 +15,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -30,8 +31,12 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = .green
         
         contentView.addSubview(categoryImage)
+        categoryImage.translatesAutoresizingMaskIntoConstraints = false
+        categoryImage.contentMode = .scaleAspectFit
 
         contentView.addSubview(categoryName)
+        categoryName.translatesAutoresizingMaskIntoConstraints = false
+        categoryName.textAlignment = .center
         
         NSLayoutConstraint.activate([
             categoryImage.topAnchor.constraint(equalTo: contentView.topAnchor),

@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Daily needs app
         
-//        let categoryViewController = UINavigationController(rootViewController: CategoryViewController())
-//        window?.rootViewController = categoryViewController
+        let categoryViewController = UINavigationController(rootViewController: CategoryViewController())
+        window?.rootViewController = categoryViewController
         
         // life cycle app
         
@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Normal Application
         
-        window?.rootViewController = NormalViewController()
+//        window?.rootViewController = NormalViewController()
         
         //To Text Field Test App
         

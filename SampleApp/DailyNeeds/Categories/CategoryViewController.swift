@@ -23,6 +23,7 @@ class CategoryViewController: UIViewController {
         Category(categoryId: "1", categoryName: "Ravindu"),
         Category(categoryId: "1", categoryName: "Ravindu")
     ]
+    var categoryCollectionWidth = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,6 @@ class CategoryViewController: UIViewController {
         categoryCollection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         categoryCollection.delegate = self
         categoryCollection.dataSource = self
-        categoryCollection.backgroundColor = .red
         categoryCollection.translatesAutoresizingMaskIntoConstraints = false
         categoryCollection.register(CategoryCollectionViewCell.self, 
                                     forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
@@ -68,11 +68,14 @@ class CategoryViewController: UIViewController {
 extension CategoryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        let itemListVC = ItemListViewController()
+        self.navigationController?.pushViewController(itemListVC, animated: true)
     }
 }
 
 extension CategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        categoryCollectionWidth = categoryCollection.frame.width
         return 10
     }
     
@@ -88,6 +91,22 @@ extension CategoryViewController: UICollectionViewDataSource {
 
 extension CategoryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        let widthOfOneView = (categoryCollectionWidth / 4) - 5
+        
+        return CGSize(width: widthOfOneView, height: 100)
+    }
+}
+
+//MARK: - Orientation handling in swift
+extension CategoryViewController {
+    override func viewWillTransition(to size: CGSize, with coordinator: any UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        coordinator.animate(alongsideTransition: { _ in
+            
+        }) { _ in
+            
+            self.categoryCollectionWidth = size.width
+        }
     }
 }
