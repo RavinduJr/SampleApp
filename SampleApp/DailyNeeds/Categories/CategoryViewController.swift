@@ -33,7 +33,9 @@ class CategoryViewController: UIViewController {
     }
     
     @objc func addCategoryPopUpHandler() {
-        let addCategoryViewController = AddCategoryViewController()
+        let addCategoryVC = AddCategoryViewController()
+        addCategoryVC.delegate = self
+        let addCategoryViewController = UINavigationController(rootViewController: addCategoryVC)
         self.navigationController?.present(addCategoryViewController, animated: true)
     }
     
@@ -76,7 +78,7 @@ extension CategoryViewController: UICollectionViewDelegate {
 extension CategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         categoryCollectionWidth = categoryCollection.frame.width
-        return 10
+        return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -108,5 +110,12 @@ extension CategoryViewController {
             
             self.categoryCollectionWidth = size.width
         }
+    }
+}
+
+extension CategoryViewController: AddCategoryViewControllerDelegate {
+    func addCategoryHandler(category: Category) {
+        categories.append(category)
+        categoryCollection.reloadData()
     }
 }

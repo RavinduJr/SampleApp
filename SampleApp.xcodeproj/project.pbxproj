@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,8 @@
 		0C3F6D7F2C1BC3B200379EF3 /* ShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F6D7E2C1BC3B200379EF3 /* ShopItem.swift */; };
 		0C3F6D812C1BC67900379EF3 /* ShopItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F6D802C1BC67900379EF3 /* ShopItemTableViewCell.swift */; };
 		0C723C7B2C1A708300982F3E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C723C7A2C1A708300982F3E /* Images.xcassets */; };
+		0C7F4F5C2D542D22003359B0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F4F5B2D542D22003359B0 /* MenuViewController.swift */; };
+		0C81B3262C9DB73F00997638 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81B3252C9DB73F00997638 /* DrawingViewController.swift */; };
 		1C1302152C1183B800E62DAE /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1302142C1183B800E62DAE /* CategoryViewController.swift */; };
 		1C1302172C118F8200E62DAE /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1302162C118F8200E62DAE /* CategoryCollectionViewCell.swift */; };
 		1C13021D2C11939100E62DAE /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13021C2C11939100E62DAE /* Strings.swift */; };
@@ -49,6 +51,8 @@
 		0C3F6D7E2C1BC3B200379EF3 /* ShopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItem.swift; sourceTree = "<group>"; };
 		0C3F6D802C1BC67900379EF3 /* ShopItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItemTableViewCell.swift; sourceTree = "<group>"; };
 		0C723C7A2C1A708300982F3E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0C7F4F5B2D542D22003359B0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0C81B3252C9DB73F00997638 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		1C1302142C1183B800E62DAE /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		1C1302162C118F8200E62DAE /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		1C13021C2C11939100E62DAE /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -68,6 +72,10 @@
 		1CFED4EC2BF2177F0001BE9D /* SampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppUITests.swift; sourceTree = "<group>"; };
 		1CFED4EE2BF2177F0001BE9D /* SampleAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		0C86BDE32D54FBBA00C657AE /* TreeStructure */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TreeStructure; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1CFED4C52BF2177C0001BE9D /* Frameworks */ = {
@@ -100,6 +108,22 @@
 				0C3F6D7C2C1BC34600379EF3 /* ItemListViewController.swift */,
 			);
 			path = ItemList;
+			sourceTree = "<group>";
+		};
+		0C7F4F5A2D542D00003359B0 /* MApp */ = {
+			isa = PBXGroup;
+			children = (
+				0C7F4F5B2D542D22003359B0 /* MenuViewController.swift */,
+			);
+			path = MApp;
+			sourceTree = "<group>";
+		};
+		0C81B3242C9DB72B00997638 /* DrawingApp */ = {
+			isa = PBXGroup;
+			children = (
+				0C81B3252C9DB73F00997638 /* DrawingViewController.swift */,
+			);
+			path = DrawingApp;
 			sourceTree = "<group>";
 		};
 		1C1302132C11821300E62DAE /* DailyNeeds */ = {
@@ -190,6 +214,9 @@
 		1CFED4CA2BF2177C0001BE9D /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				0C86BDE32D54FBBA00C657AE /* TreeStructure */,
+				0C7F4F5A2D542D00003359B0 /* MApp */,
+				0C81B3242C9DB72B00997638 /* DrawingApp */,
 				1C864B242C11EDA000031163 /* Resources */,
 				1C1302132C11821300E62DAE /* DailyNeeds */,
 				1CFED4CB2BF2177C0001BE9D /* AppDelegate.swift */,
@@ -232,6 +259,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				0C86BDE32D54FBBA00C657AE /* TreeStructure */,
 			);
 			name = SampleApp;
 			productName = SampleApp;
@@ -306,6 +336,8 @@
 				Base,
 			);
 			mainGroup = 1CFED4BF2BF2177C0001BE9D;
+			packageReferences = (
+			);
 			productRefGroup = 1CFED4C92BF2177C0001BE9D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -351,11 +383,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CFED4CC2BF2177C0001BE9D /* AppDelegate.swift in Sources */,
+				0C81B3262C9DB73F00997638 /* DrawingViewController.swift in Sources */,
 				1CFED4CE2BF2177C0001BE9D /* SceneDelegate.swift in Sources */,
 				0C3F6D7F2C1BC3B200379EF3 /* ShopItem.swift in Sources */,
 				0C3F6D7D2C1BC34600379EF3 /* ItemListViewController.swift in Sources */,
 				1C864B232C11EBAA00031163 /* AddCategoryViewController.swift in Sources */,
 				1CBB08982C1212B2005E110E /* Category.swift in Sources */,
+				0C7F4F5C2D542D22003359B0 /* MenuViewController.swift in Sources */,
 				1C1302172C118F8200E62DAE /* CategoryCollectionViewCell.swift in Sources */,
 				1C864B292C11EF1400031163 /* CategoryViewModel.swift in Sources */,
 				1C13021D2C11939100E62DAE /* Strings.swift in Sources */,
@@ -532,6 +566,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KY6RAA56XA;
@@ -559,6 +594,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KY6RAA56XA;
