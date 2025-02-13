@@ -16,10 +16,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
+        // Tree App
+//        let treeVC = TreeViewController()
+//        window?.rootViewController = treeVC
+        
+        //Menu App
+//        let menuVC = UINavigationController(rootViewController: MenuViewController())
+//        window?.rootViewController = menuVC
+        
+        // Drawing App
+        
+        let drawingViewController = UINavigationController(rootViewController: DrawingViewController())
+        window?.rootViewController = drawingViewController
+        
         // Daily needs app
         
-        let categoryViewController = UINavigationController(rootViewController: CategoryViewController())
-        window?.rootViewController = categoryViewController
+//        let categoryViewController = UINavigationController(rootViewController: CategoryViewController())
+//        window?.rootViewController = categoryViewController
         
         // life cycle app
         
